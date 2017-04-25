@@ -35,7 +35,7 @@ subscriptions model =
 
 -- MAIN
 -- Html.programではなく、Navigation.programを使う
--- Navigation.programは、browserの経路変更時メッセージを出す（ここではOnLocationChange）
+-- Navigation.programは、browserの経路変更時メッセージを発生させる（ここではOnLocationChange）
 
 
 main : Program Never Model Msg
