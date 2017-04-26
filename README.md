@@ -33,3 +33,19 @@ server 稼働
     -   `nf start`
 
 <http://localhost:3000>で確認
+
+### Atomでelmを使うときのPackageSetting
+
+elm-format
+
+-   Atom Packageだけではなく、[ここ](https://github.com/avh4/elm-format)で`elm-format.exe`をダウンロード・解凍し、そのパスをsettingで登録すること
+    -   ex) `C:\Program Files\elm-format\elm-format.exe`
+
+atom-beautify
+
+-   **Default Beautifier** : `elm-format`を設定
+-   **Beautify On Save** : チェック
+
+language-elm
+linter
+linter-elm-make
