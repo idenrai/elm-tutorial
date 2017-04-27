@@ -32,6 +32,18 @@ update message players =
             ( players, Cmd.none )
 
 
+
+-- Edit.elmから「+・-」ボタン押す時ChangeLevel メッセージが来る
+-- ChangeLevelがchangeLevelCommandsを呼ぶ
+-- ChangeLevelCommandで、IDが一致したらCommandsのsaveを呼ぶ
+-- saveがDBを更新し、OnSave　メッセージを返す
+-- OnSaveが失敗したら既存のplayersを返すだけ
+-- OnSaveが成功だったらupdatePlayerを呼び、playersを更新して返す
+-- Commandsのsaveがそれを受け取って、Cmdを返す
+-- changeLevelCommandsがcmdForPlayerの結果としてCmdのリストを返す
+-- Listで帰ってきたCmdをUpdateのChangeLevelがCmd.batchで一つのCmdに変更
+
+
 changeLevelCommands : PlayerId -> Int -> List Player -> List (Cmd Msg)
 changeLevelCommands playerId howMuch players =
     let
